@@ -69,7 +69,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "es_profile" {
-  name = "es_profile1"
+  name = "es_profile2"
   role = "${aws_iam_role.es_role.name}"
 }
 
