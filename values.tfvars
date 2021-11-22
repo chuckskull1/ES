@@ -1,0 +1,5 @@
+region = "us-east-2"
+ami = "ami-0d718c3d715cec4a7"
+instance_type = "t2.medium"
+subnet_id = "subnet-020aaed46f1a6a36e"
+vpc_id = "vpc-036689c1bf8b83bfc"
