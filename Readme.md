@@ -11,7 +11,7 @@ Terraform template for:
    - Makes CPUUtilization matrices
    - Makes MemoryUtilization matrices
 
-- This solution launches an EC2 instance and installs jdk and open distro in it. Then before starting the elasticsearch service it downloads configuration file (which can be found in the root folder itself naming config.yml) from s3 bucket changes the value of node name and network-host in the run time and then start the service. I have used opendistro since it is rich in features for security and is open source.
+- This solution launches an EC2 instance and installs jdk and open distro for elastic search in it. Then before starting the elasticsearch service it downloads configuration file (which can be found in the root folder itself naming config.yml) from s3 bucket changes the value of node name and network-host in the run time and then start the service. I have used opendistro since it is rich in features for security and is open source.
 
 - Resources used during the solutions were mainly [open distro documentation](https://opendistro.github.io/for-elasticsearch-docs/docs/install/rpm/) and [terraform documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs).
 
@@ -33,7 +33,9 @@ Requires credentials to access the Elasticsearch node else it shows unauthorised
 ![Postman screenshot](screenshots/user.png)
 Once username and password are configured it allows the access (SSL has been disabled for this call).
 
+![Configuration screenshot](screenshots/certficate.png)
 Here we can specify the CA authorised certificates instead of dummy SSL provided by Open Distro.
+
 Open Distro also provides features like RBAC control, support for Active directory, index-level, document-level and field-level security which can be used to make the node more secure.
 
 #### How would you monitor this instance? What metrics would you monitor?
