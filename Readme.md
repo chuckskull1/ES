@@ -23,19 +23,28 @@ I used terraform to automate and provision and bootstraping of the instance as i
 
 #### How did you choose to secure ElasticSearch? Why?
 Open Distro for Elasticsearch has its own security plugin for authentication and access control. The plugin provides numerous features to help you secure your cluster. I have used it's HTTP basic authentication feature to have secure communication using TLS. For TLS dummy SSL is used as of now but can be replaced with CA authorised certificate in actual case.
+
 ![Postman screenshot](screenshots/SSL.png)
 This shows our ES setup needs to have SSL for communication
+
 ![Postman screenshot](screenshots/Unauthorised.png)
 Requires credentials to access the Elasticsearch node else it shows unauthorised.
+
 ![Postman screenshot](screenshots/user.png)
 Once username and password are configured it allows the access (SSL has been disabled for this call).
+
 Here we can specify the CA authorised certificates instead of dummy SSL provided by Open Distro.
 Open Distro also provides features like RBAC control, support for Active directory, index-level, document-level and field-level security which can be used to make the node more secure.
 
 #### How would you monitor this instance? What metrics would you monitor?
-The instance can be monitored using cloudwatch and alarms can be setup accordingly. As of now the solution has cloudwatch matrices for CPUUtilisation and Memory usage. It can be extended to other things like disk usage(EBS volume), jvm data. 
+The instance can be monitored using cloudwatch and alarms can be setup accordingly. As of now the solution has cloudwatch matrices for CPUUtilisation and Memory usage. It can be extended to other things like disk usage(EBS volume), jvm pressure.
+
 ![Cloudwatch screenshot](screenshots/cpu.png)
 This shows the CPU utilisation for ES node
+
+![Cloudwatch screenshot](screenshots/memory.png)
+This shows the CPU utilisation for ES node
+
 Open distro also provides performance analyzer which can also be used to monitor cluster performance.
 
 #### Could you extend your solution to launch a secure cluster of ElasticSearch nodes? What would need to change to support this use case?
